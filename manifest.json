@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Schema.org Inspector",
+  "name": "Schema Checker - Structured Data, JSON-LD & Microdata",
   "version": "1.0.0",
-  "description": "Inspect Schema.org structured data (JSON-LD, Microdata) in a DevTools panel. By Aperitif Agency - LLM & AI Optimisation.",
+  "description": "Check Schema.org structured data in DevTools. A schema markup checker & viewer for JSON-LD and Microdata. By Aperitif Agency.",
   "homepage_url": "https://aperitifagency.com.au/seo/llm-ai-optimisation/",
   "devtools_page": "devtools.html",
   "icons": {

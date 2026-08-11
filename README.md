@@ -1,8 +1,8 @@
-# Schema.org Inspector
+# Schema Checker
 
-A Chrome DevTools extension for inspecting [Schema.org](https://schema.org) structured data on any page. Adds a **Schema** panel to DevTools that extracts and pretty-prints every JSON-LD and Microdata entity it finds.
+A free schema checker for Chrome DevTools. It adds a **Schema** panel that extracts and pretty-prints every [Schema.org](https://schema.org) JSON-LD and Microdata entity on the page you're inspecting - so you can check schema markup as you browse, without pasting URLs into a separate structured data testing tool.
 
-![Schema.org Inspector panel showing extracted JSON-LD entities](store-assets/screenshot-1280x800.png)
+![Schema Checker panel showing extracted JSON-LD structured data](store-assets/screenshot-1280x800.png)
 
 ## Features
 
@@ -57,9 +57,13 @@ The usual way to check that markup is high-friction: view source, hunt for `<scr
 
 Common types you'll see while auditing, each linked to its Schema.org definition: [Organization](https://schema.org/Organization) and [LocalBusiness](https://schema.org/LocalBusiness) (brand identity, `sameAs` social profiles), [Product](https://schema.org/Product) with its [Offer](https://schema.org/Offer) (price, availability), [Article](https://schema.org/Article) and [BlogPosting](https://schema.org/BlogPosting), [BreadcrumbList](https://schema.org/BreadcrumbList) and [ItemList](https://schema.org/ItemList) (site structure and rankings), [FAQPage](https://schema.org/FAQPage), [Recipe](https://schema.org/Recipe), [Event](https://schema.org/Event), [Person](https://schema.org/Person), and the [WebSite](https://schema.org/WebSite) / [WebPage](https://schema.org/WebPage) pair that ties a page into the wider entity graph.
 
+## How it compares to other schema testing tools
+
+[Google's Rich Results Test](https://search.google.com/test/rich-results) and the official [Schema Markup Validator](https://validator.schema.org/) are the right tools for vocabulary-level validation - confirming a Product or Recipe carries every property rich results require. Schema Checker complements them rather than replacing them: it lives inside DevTools, checks every page as you click through a site, and shows extracted entities instantly - including JSON-LD injected by JavaScript after load, which URL-based schema validators can miss on client-rendered sites. Use this panel to find, read, and debug structured data fast; run the page through a validator when you need a compliance verdict.
+
 ## Contributing
 
-Found a bug, or a page whose markup the panel mishandles? [Open an issue or pull request on GitHub](https://github.com/aperitifagency/schema-devtools) - example URLs and screenshots make extraction bugs much easier to reproduce. For anything else - feature ideas, feedback, or help with your own structured data - [get in touch with Aperitif Agency](https://aperitifagency.com.au/contact/).
+Found a bug, or a page whose markup the panel mishandles? [Open an issue or pull request on GitHub](https://github.com/aperitifagency/schema-checker) - example URLs and screenshots make extraction bugs much easier to reproduce. For anything else - feature ideas, feedback, or help with your own structured data - [get in touch with Aperitif Agency](https://aperitifagency.com.au/contact/).
 
 ## About
 
