@@ -29,6 +29,16 @@ for size in 16 48 128; do
   shot "file://$OUT/icon.html?size=$size" "$ROOT/icons/icon$size.png" "$size,$size" "00000000"
 done
 
+# Re-encode icons with Pillow: headless Chrome writes multi-IDAT PNGs, which
+# the Chrome Web Store's image processor rejects. Pillow writes a single IDAT.
+python3 - "$ROOT/icons" <<'PY'
+import sys
+from PIL import Image
+for n in (16, 48, 128):
+    path = f"{sys.argv[1]}/icon{n}.png"
+    Image.open(path).convert("RGBA").save(path, "PNG", optimize=True)
+PY
+
 # ── JPEG versions for the Web Store (requires no-alpha; JPEG is always safe) ─
 for f in screenshot-1280x800 promo-small-440x280 promo-marquee-1400x560; do
   sips -s format jpeg -s formatOptions best "$OUT/$f.png" --out "$OUT/$f.jpg" >/dev/null
